@@ -1,4 +1,0 @@
- ☐ eliminar imágenes relacionadas cuando se elimine un album (archivos físicos)
- ☐ agregar funcionalidad para mover imágenes de un album a otro
- ☐ utilizar layouts para organizar mejor las vistas y evitar contenido duplicado
- ☐ abstraer funcionalidad que determina el nombre de las nuevas imágenes subidas para que sea reutilizable
