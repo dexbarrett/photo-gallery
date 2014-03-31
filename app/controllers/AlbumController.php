@@ -2,11 +2,6 @@
 
 class AlbumController extends \BaseController {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
     public function index()
     {
         $albums = Album::with('photos')->get();
@@ -15,21 +10,11 @@ class AlbumController extends \BaseController {
             ->with(compact('albums'));  
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
     public function create()
     {
         return View::make('album.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
     public function store()
     {
         $rules = array(
@@ -61,12 +46,6 @@ class AlbumController extends \BaseController {
         return Redirect::route('album.show', array('id' => $album->id));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
     public function show($id)
     {
         $album = Album::with('photos')->find($id);
@@ -76,34 +55,7 @@ class AlbumController extends \BaseController {
             ->with(compact('album', 'albums'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
+   
     public function destroy($id)
     {
         $album = Album::find($id);
