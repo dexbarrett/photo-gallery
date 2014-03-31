@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'AlbumController@index');
+
+Route::get('album/{id}/image', array('as' => 'add_image', 'uses' => 'ImageController@create'));
+Route::post('album/{id}/image', array('as' => 'add_image', 'uses' => 'ImageController@store'));
+Route::delete('image/{id}', array('as' => 'delete_image', 'uses' => 'ImageController@destroy'));
+Route::post('image/{id}/move', array('as' => 'move_image', 'uses' => 'ImageController@move'));
+
+Route::resource('album', 'AlbumController');
